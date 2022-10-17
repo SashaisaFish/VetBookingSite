@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Vet Clinic Booking</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="mali border-thick salmon">Welcome to the Brookmill Vet Clinic!</h1>
+    </header>
+    <main>
+      <section class="booking-form">
+        <h2 class="mali border-thick salmon">Book Now</h2>
+        <form id="your-pet" class="form">
+          <fieldset class="pet-name border-thin cream">
+            <legend class="border-thin salmon">Pet Name</legend>
+            <label for="pet-name"><p>What is your pet's name?</p></label>
+            <input type="text" name="pet-name" id="pet-name" required/>
+          </fieldset>
+
+          <fieldset class="pet-id border-thin cream">
+            <legend class="border-thin salmon">Pet ID</legend>
+            <label for="pet-id"><p>What is your pet's ID number?</p></label>
+            <input type="number" name="pet-id" id="pet-id" min="1" max="10" required/>
+          </fieldset>
+
+          <fieldset class="pet-type border-thin cream">
+            <legend class="border-thin salmon">Animal Type</legend>
+            <p class="species">
+              <label for="cat">Cat</label>
+              <input type="radio" name="species" id="cat" value="cat" required/>
+            </p>
+            <p class="species">
+              <label for="dog">Dog</label>
+              <input type="radio" name="species" id="dog" value="dog" required/>
+            </p>
+
+            <p class="species">
+              <label for="reptile">Reptile</label>
+              <input type="radio" name="species" id="reptile" value="reptile" required/>
+            </p>
+            <p class="species">
+              <label for="bird">Bird</label>
+              <input type="radio" name="species" id="bird" value="bird" required/>
+            </p>
+            <p class="species">
+              <label for="large-cat">Large Cat</label>
+              <input type="radio" name="species" id="largeCat" value="largeCat" required/>
+            </p>
+            <p class="species">
+              <label for="small-animal">Small Animal</label>
+              <input type="radio" name="species" id="smallAnimal" value="smallAnimal" required/>
+            </p>
+          </fieldset>
+
+          <fieldset class="date border-thin cream">
+            <legend class="border-thin salmon">Date</legend>
+            <label for="ap-date"><p>What date is the appointment?</p></label>
+            <input type="date" name="ap-date" id="ap-date" min="2022-10-01" max="2022-10-31" required/>
+          </fieldset>
+
+          <fieldset class="time border-thin cream">
+            <legend class="border-thin salmon">Time</legend>
+            <label for="ap-time"><p>What time is the appointment?</p></label>
+            <input type="time" name="ap-time" id="ap-time" required/>
+          </fieldset>
+
+          <button type="submit" class="submit border-thin salmon"><p>submit</p></button>
+        </form>
+      </section>
+      
+      <section class="calendar">
+        <h2 class="mali border-thick salmon">October</h2>
+        <div id="calendar-container" class="calendar-container light border-thick">
+          <div class="sept mali border-thin salmon entry">September</div>
+          <div class="nov mali border-thin salmon entry">November</div>
+        </div>
+      </section>
+    </main>
+    <footer class="salmon">
+      <p>Contact us</p>
+    </footer>
+    <script src="newScript.js"></script>
+  </body>
+</html>

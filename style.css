@@ -1,0 +1,284 @@
+/* || COLOUR PALETTE
+DARK PURPLE: #331832
+CREAM: #F5EAD0
+LIGHT GREEN: #CBDFBD
+SALMON: #F19C79
+BRICK RED: #A44A3F
+*/
+
+/* FONTS */
+@import url("https://fonts.googleapis.com/css?family=Mali&display=swap");
+html {
+  font-size: calc(16px + 0.390625vw);
+}
+/* || MAIN SECTIONS */
+body {
+  background-color: #83c5be;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  margin: 2% 2%;
+  text-align: center;
+}
+footer {
+  margin: 5vw 0 0 0;
+  padding: 0.1%;
+  text-align: center;
+}
+/* || SUBSECTIONS */
+h1 {
+  margin: 1% auto;
+  padding: 2%;
+  width: fit-content;
+  font-family: "Mali", sans-serif;
+}
+h2 {
+  margin: 2% auto;
+  padding: 1%;
+  width: fit-content;
+}
+p {
+  font-family: "Mali", sans-serif;
+  margin: 2%;
+}
+
+/* || CLASSES */
+
+.booking-form {
+  font-family: "Mali", sans-serif;
+  text-align: center;
+}
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(5, auto);
+  grid-template-areas:
+    "name id"
+    "type type"
+    "type type"
+    "date time"
+    "submit submit";
+}
+.calendar-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+/* || BORDERS */
+.border-thin {
+  border: 2px solid #006d77;
+  border-radius: 5px;
+}
+.border-thick {
+  border: 3px solid #006d77;
+  border-radius: 5px;
+}
+/* || BACKGROUND COLOURS */
+.dark {
+  background-color: #006d77;
+}
+.mid {
+  background-color: #83c5be;
+}
+.light {
+  background-color: #edf6f9;
+}
+.salmon {
+  background-color: #e29578;
+}
+.cream {
+  background-color: #ffddd2;
+}
+
+/* || FONT STYLES */
+.mali {
+  font-family: "Mali", sans-serif;
+}
+.light-font {
+  color: #cde5d7;
+}
+
+/* || CALENDAR */
+.entry {
+  display: flex;
+  align-items: center;
+  margin: 0.2vw;
+  padding: 1vw;
+}
+.sept {
+  grid-column: 1 / 6;
+  justify-content: flex-start;
+  font-size: 11.1vw;
+}
+.nov {
+  grid-row: 6 / 7;
+  grid-column: 2 / 8;
+  justify-content: flex-end;
+  font-size: 11.1vw;
+}
+.day {
+  display: grid;
+  padding: 0.5vw 0.1vw;
+  grid-template-columns: 10% 95%;
+  grid-template-rows: 10% 95%;
+  grid-template-areas:
+    "n ."
+    "b b"
+    "b b";
+}
+.number {
+  margin: 0;
+  grid-area: n;
+}
+/* before click */
+.booked-slot {
+  text-align: center;
+  margin: 0;
+  width: 95%;
+  box-sizing: border-box;
+  font-size: 3vw;
+  grid-area: b;
+}
+/* img and .details */
+.booked-slot .hidden {
+  display: none;
+}
+/* after click */
+.booked-slot-big {
+  position: absolute;
+  left: 10%;
+  font-size: 200%;
+  width: 80vw;
+}
+.booked-slot-big .details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  margin: auto;
+}
+.booked-slot-big img {
+  display: block;
+  margin: 1% auto;
+  max-height: 60vh;
+  max-width: 70vw;
+  grid-column: 1 / 4;
+}
+
+/* || FORM */
+fieldset {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1%;
+}
+legend {
+  text-align: left;
+  margin: 1% 0 1% 0;
+}
+.pet-id {
+  grid-area: id;
+}
+.pet-name {
+  grid-area: name;
+}
+.date {
+  grid-area: date;
+}
+.time {
+  grid-area: time;
+}
+.submit {
+  margin: 2% auto;
+  width: fit-content;
+  padding: 1%;
+  grid-area: submit;
+  font-size: 120%;
+}
+.submit:hover {
+  transition: all 0.5s ease-in-out;
+  font-size: 160%;
+  background-color: #e6a289;
+  padding: 1% 5%;
+}
+
+/* || SPECIES GRID */
+.pet-type {
+  grid-area: type;
+  display: grid;
+  justify-items: stretch;
+  padding: 0 10% 0 10%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+}
+/* || SPECIES PLACEMENTS*/
+.species {
+  text-align: center;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+/* || MEDIA QUERIES */
+
+@media (orientation: portrait) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  .booking-form,
+  .calendar {
+    height: 49%;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  html {
+    font-size: calc(16px + 0.390625vh);
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  header {
+    display: none;
+  }
+  main {
+    display: grid;
+    grid-template-columns: 30% 70%;
+  }
+  .booked-slot {
+    height: fit-content;
+    font-size: 5vh;
+  }
+  /* FORM */
+  .booking-form {
+    margin: 1%;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  fieldset {
+    margin: .2vh;
+    padding: 2% 0.5%;
+  }
+  legend {
+    margin: 0;
+  }
+  fieldset p {
+    margin: .2vh;
+  }
+  /* SPECIES GRID */
+  .pet-type {
+    padding: 0 5%;
+  }
+  /* CALENDAR */
+  .sept, .nov {
+    font-size: 8.7vh;
+  }
+}
