@@ -19,7 +19,7 @@ body {
   flex-direction: column;
 }
 header {
-  margin: 2% 2%;
+  margin: 2%;
   text-align: center;
 }
 footer {
@@ -41,7 +41,7 @@ h2 {
 }
 p {
   font-family: "Mali", sans-serif;
-  margin: 2%;
+  margin: 2% auto;
 }
 
 /* || CLASSES */
@@ -51,6 +51,7 @@ p {
   text-align: center;
 }
 .form {
+  margin: auto;
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(5, auto);
@@ -66,6 +67,7 @@ p {
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(6, 1fr);
 }
+
 
 /* || BORDERS */
 .border-thin {
@@ -121,26 +123,26 @@ p {
 }
 .day {
   display: grid;
-  padding: 0.5vw 0.1vw;
-  grid-template-columns: 10% 95%;
-  grid-template-rows: 10% 95%;
+  padding: 0.6vw 0 0 0;
+  grid-template-columns: 10% 90%;
+  grid-template-rows: 10% 90%;
   grid-template-areas:
     "n ."
-    "b b"
     "b b";
 }
 .number {
-  margin: 0;
+  padding: .1vw;
   grid-area: n;
 }
 /* before click */
 .booked-slot {
   text-align: center;
-  margin: 0;
+  margin: auto;
   width: 95%;
   box-sizing: border-box;
   font-size: 3vw;
   grid-area: b;
+  overflow: auto;
 }
 /* img and .details */
 .booked-slot .hidden {
@@ -149,9 +151,11 @@ p {
 /* after click */
 .booked-slot-big {
   position: absolute;
-  left: 10%;
+  top: 20%;
+  left: 20%;
   font-size: 200%;
-  width: 80vw;
+  width: 60vw;
+  height: 60vw;
 }
 .booked-slot-big .details {
   display: grid;
@@ -162,8 +166,8 @@ p {
 .booked-slot-big img {
   display: block;
   margin: 1% auto;
-  max-height: 60vh;
-  max-width: 70vw;
+  max-height: 50vh;
+  max-width: 50vw;
   grid-column: 1 / 4;
 }
 
@@ -173,7 +177,7 @@ fieldset {
   flex-flow: column wrap;
   justify-content: space-evenly;
   align-items: center;
-  margin: 1%;
+  margin: 1% auto;
 }
 legend {
   text-align: left;
@@ -235,33 +239,37 @@ legend {
   }
 }
 
-@media (max-width: 900px) and (orientation: landscape) {
+@media (max-width: 1024px) and (orientation: landscape) {
   html {
     font-size: calc(16px + 0.390625vh);
   }
-  body {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
   header {
-    display: none;
+    margin: auto 2%;
   }
   main {
+    width: 100%;
     display: grid;
     grid-template-columns: 30% 70%;
   }
-  .booked-slot {
-    height: fit-content;
-    font-size: 5vh;
+  h2 {
+    margin: 1vh auto;
   }
   /* FORM */
   .booking-form {
-    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 auto;
+    width: 29vw;
+    
   }
   .form {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0;
+    min-height: 100vh;
   }
   fieldset {
     margin: .2vh;
@@ -278,7 +286,23 @@ legend {
     padding: 0 5%;
   }
   /* CALENDAR */
+  .calendar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 auto;
+    width: 68vw;
+  }
+  .calendar-container {
+    width: 68vw;
+    height: 100vh;
+  }
   .sept, .nov {
     font-size: 8.7vh;
+  }
+    .booked-slot {
+    height: fit-content;
+    font-size: 3.8vh;
   }
 }
