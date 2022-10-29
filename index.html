@@ -18,20 +18,20 @@
           <fieldset class="pet-name border-thin cream">
             <legend class="border-thin salmon">Pet Name</legend>
             <label for="pet-name"><p>What is your pet's name?</p></label>
-            <input type="text" name="pet-name" id="pet-name" required/>
+            <input type="text" name="pet-name" id="pet-name" placeholder="Name" required/>
           </fieldset>
 
           <fieldset class="pet-id border-thin cream">
             <legend class="border-thin salmon">Pet ID</legend>
             <label for="pet-id"><p>What is your pet's ID number?</p></label>
-            <input type="number" name="pet-id" id="pet-id" min="1" max="10" required/>
+            <input type="number" name="pet-id" id="pet-id" min="1" max="10" value="1" required/>
           </fieldset>
 
           <fieldset class="pet-type border-thin cream">
             <legend class="border-thin salmon">Animal Type</legend>
             <p class="species">
               <label for="cat">Cat</label>
-              <input type="radio" name="species" id="cat" value="cat" required/>
+              <input type="radio" name="species" id="cat" value="cat" checked required/>
             </p>
             <p class="species">
               <label for="dog">Dog</label>
@@ -59,13 +59,13 @@
           <fieldset class="date border-thin cream">
             <legend class="border-thin salmon">Date</legend>
             <label for="ap-date"><p>What date is the appointment?</p></label>
-            <input type="date" name="ap-date" id="ap-date" min="2022-10-01" max="2022-10-31" required/>
+            <input type="date" name="ap-date" id="ap-date" min="2022-10-01" max="2022-10-31" value="2022-10-01" required/>
           </fieldset>
 
           <fieldset class="time border-thin cream">
             <legend class="border-thin salmon">Time</legend>
             <label for="ap-time"><p>What time is the appointment?</p></label>
-            <input type="time" name="ap-time" id="ap-time" required/>
+            <input type="time" name="ap-time" id="ap-time" min="09:00" max="18:00" value="12:00" required/>
           </fieldset>
 
           <button type="submit" class="submit border-thin salmon"><p>submit</p></button>

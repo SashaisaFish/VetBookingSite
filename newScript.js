@@ -1,13 +1,10 @@
-import {cat, dog, largeCat, reptile, bird, smallAnimal} from './petData'
+import { cat, dog, largeCat, reptile, bird, smallAnimal } from './petData.js';
 
 // QQ CONSTANTS
 
 const calendar = document.getElementById("calendar-container");
 const form = document.getElementById("your-pet");
-
-// create x button with x-button id
-const xButton = document.createElement("button");
-xButton.setAttribute("class", "x-button");
+const bookedSlot = document.getElementById("booked-slot")
 
 // QQ EVENT LISTENER
 
@@ -20,6 +17,8 @@ form.addEventListener("submit", (event) => {
 
   createSlot(dd);
 });
+
+
 
 // QQ MAIN FUNCTIONS
 
@@ -62,7 +61,15 @@ function createSlot(dd) {
 
   // set attribute IDs
   petDetailsDiv.setAttribute("class", `details-${petId}-${petSpecies}`);
-  bookedSlot.setAttribute("onclick", "openSlot(this)");
+  // bookedSlot.setAttribute("onclick", "openSlot(this)");
+  bookedSlot.addEventListener("click", openSlotListener);
+  function openSlotListener() {
+    bookedSlot.removeEventListener("click", openSlotListener);
+    openSlot(bookedSlot);
+  }
+
+  // set ID
+  bookedSlot.id = "booked-slot"
 
   // set classes
   bookedSlot.classList.add(
@@ -90,6 +97,8 @@ function createSlot(dd) {
 }
 
 function getInfo(petSpecies, petId) {
+  // declare species
+  let species;
   // get correct array based on petSpecies
   if (petSpecies === "cat") {
     species = cat;
@@ -126,11 +135,43 @@ function getInfo(petSpecies, petId) {
 }
 
 function openSlot(element) {
+
   // get elements
+  // const days = document.querySelectorAll(".entry")
+  const calendar = document.getElementById("calendar-container")
   const petDetailsDiv = element.querySelector(":scope > div");
   // toggle classes
+  element.classList.toggle("booked-slot")
   element.classList.toggle("booked-slot-big");
+  // days.classList.toggle("hidden");
   petDetailsDiv.classList.toggle("hidden");
+  // move to main calendar grid
+  const slotDay = element.parentElement;
+  console.log(slotDay)
+  element.remove()
+  calendar.append(element)
+  //create x button
+  const xBtn = document.createElement("button")
+  xBtn.type = "button"
+  xBtn.innerText = "X"
+  element.append(xBtn)
+  // add event listener to x button
+  xBtn.addEventListener("click", () => {
+    xBtn.remove()
+    element.remove();
+    slotDay.append(element);
+    element.classList.toggle("booked-slot");
+    element.classList.toggle("booked-slot-big");
+    // days.classList.toggle("hidden");
+    petDetailsDiv.classList.toggle("hidden");
+    bookedSlot.addEventListener("click", openSlotListener);
+    function openSlotListener() {
+      bookedSlot.removeEventListener("click", openSlotListener);
+      openSlot(bookedSlot);
+    }
+  })
+
+  
 }
 
 // QQ HELPER FUNCTIONS

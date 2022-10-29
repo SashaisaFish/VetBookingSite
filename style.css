@@ -107,23 +107,25 @@ p {
 .entry {
   display: flex;
   align-items: center;
-  margin: 0.2vw;
+  margin: 2%;
   padding: 1vw;
 }
 .sept {
   grid-column: 1 / 6;
   justify-content: flex-start;
   font-size: 11.1vw;
+  margin: .5%;
 }
 .nov {
   grid-row: 6 / 7;
   grid-column: 2 / 8;
   justify-content: flex-end;
   font-size: 11.1vw;
+  margin: .5%
 }
 .day {
   display: grid;
-  padding: 0.6vw 0 0 0;
+  padding: 1% 0 0 0;
   grid-template-columns: 10% 90%;
   grid-template-rows: 10% 90%;
   grid-template-areas:
@@ -140,9 +142,10 @@ p {
   margin: auto;
   width: 95%;
   box-sizing: border-box;
-  font-size: 3vw;
+  font-size: 1vw;
   grid-area: b;
-  overflow: auto;
+  /* overflow: auto; */
+  place-self: center;
 }
 /* img and .details */
 .booked-slot .hidden {
@@ -150,12 +153,16 @@ p {
 }
 /* after click */
 .booked-slot-big {
-  position: absolute;
+  /* position: absolute;
   top: 20%;
   left: 20%;
   font-size: 200%;
   width: 60vw;
-  height: 60vw;
+  height: 60vw; */
+  z-index: 0;
+  grid-row: 2 / 7;
+  grid-column: 2 / 7;
+
 }
 .booked-slot-big .details {
   display: grid;
@@ -239,7 +246,7 @@ legend {
   }
 }
 
-@media (max-width: 1024px) and (orientation: landscape) {
+@media (orientation: landscape) {
   html {
     font-size: calc(16px + 0.390625vh);
   }
@@ -299,10 +306,10 @@ legend {
     height: 100vh;
   }
   .sept, .nov {
-    font-size: 8.7vh;
+    font-size: 8vw;
   }
     .booked-slot {
     height: fit-content;
-    font-size: 3.8vh;
+    font-size: 3vw;
   }
 }

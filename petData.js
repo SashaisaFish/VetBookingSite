@@ -430,4 +430,4 @@ const smallAnimal = [
   },
 ];
 
-export {cat, dog, largeCat, reptile, bird, smallAnimal};
+export { cat, dog, largeCat, reptile, bird, smallAnimal };
