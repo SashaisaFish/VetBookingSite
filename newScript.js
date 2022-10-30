@@ -138,7 +138,7 @@ function openSlot(element) {
 
   // get elements
   // const days = document.querySelectorAll(".entry")
-  const calendar = document.getElementById("calendar-container")
+  const calendar = document.querySelector(".calendar")
   const petDetailsDiv = element.querySelector(":scope > div");
   // toggle classes
   element.classList.toggle("booked-slot")
